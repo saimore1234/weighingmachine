@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:machine_name",
+ "creation": "2026-10-02 21:19:31.863071",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "machine_name",
+  "enabled",
+  "connection_type",
+  "column_break_16",
+  "machine_profile",
+  "connection_mode",
+  "section_break_17",
+  "location",
+  "description",
+  "column_break_18",
+  "default_uom",
+  "active",
+  "section_break_19",
+  "timeout",
+  "auto_reconnect",
+  "read_interval",
+  "column_break_20",
+  "require_stable_weight",
+  "minimum_stable_readings"
+ ],
+ "fields": [
+  {
+   "fieldname": "machine_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Machine Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "connection_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Connection Type",
+   "options": "Serial\nTCP/IP\nHTTP API\nModbus TCP\nManual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break",
+   "label": "Machine Profile"
+  },
+  {
+   "fieldname": "machine_profile",
+   "fieldtype": "Link",
+   "label": "Machine Profile",
+   "options": "Weighing Machine Profile"
+  },
+  {
+   "default": "Server",
+   "fieldname": "connection_mode",
+   "fieldtype": "Select",
+   "label": "Connection Mode",
+   "options": "Server\nLocal Agent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break",
+   "label": "Defaults"
+  },
+  {
+   "default": "KG",
+   "fieldname": "default_uom",
+   "fieldtype": "Select",
+   "label": "Default UOM",
+   "options": "KG\nG\nLB\nTON"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Behaviour"
+  },
+  {
+   "default": "5",
+   "fieldname": "timeout",
+   "fieldtype": "Int",
+   "label": "Timeout (seconds)"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_reconnect",
+   "fieldtype": "Check",
+   "label": "Auto Reconnect"
+  },
+  {
+   "default": "1",
+   "fieldname": "read_interval",
+   "fieldtype": "Float",
+   "label": "Read Interval (seconds)"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break",
+   "label": "Stability"
+  },
+  {
+   "default": "0",
+   "fieldname": "require_stable_weight",
+   "fieldtype": "Check",
+   "label": "Require Stable Weight"
+  },
+  {
+   "default": "3",
+   "depends_on": "eval:doc.require_stable_weight",
+   "fieldname": "minimum_stable_readings",
+   "fieldtype": "Int",
+   "label": "Minimum Stable Readings"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-02 21:19:31.863071",
+ "modified_by": "Administrator",
+ "module": "Weighing Machine Integration",
+ "name": "Weighing Machine",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Weighing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "machine_name"
+}

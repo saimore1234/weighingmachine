@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/weighing_machine_integration/css/weighing_machine_integration.css"
-# app_include_js = "/assets/weighing_machine_integration/js/weighing_machine_integration.js"
+app_include_js = "/assets/weighing_machine_integration/js/weighing_capture.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/weighing_machine_integration/css/weighing_machine_integration.css"
@@ -83,7 +83,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "weighing_machine_integration.install.before_install"
-# after_install = "weighing_machine_integration.install.after_install"
+after_install = "weighing_machine_integration.setup.init_settings.execute"
 
 # Uninstallation
 # ------------

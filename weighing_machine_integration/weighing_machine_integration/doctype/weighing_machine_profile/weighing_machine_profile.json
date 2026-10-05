@@ -1,0 +1,577 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:profile_name",
+ "creation": "2026-10-02 21:19:30.433771",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "profile_name",
+  "enabled",
+  "connection_type",
+  "column_break_1",
+  "manufacturer",
+  "model",
+  "description",
+  "section_break_2",
+  "serial_port",
+  "baud_rate",
+  "data_bits",
+  "column_break_3",
+  "stop_bits",
+  "parity",
+  "serial_read_timeout",
+  "serial_write_timeout",
+  "serial_encoding",
+  "serial_line_terminator",
+  "section_break_4",
+  "tcp_host",
+  "tcp_port",
+  "column_break_5",
+  "tcp_socket_timeout",
+  "tcp_encoding",
+  "tcp_terminator",
+  "section_break_6",
+  "http_url",
+  "http_method",
+  "http_headers",
+  "http_request_body",
+  "column_break_7",
+  "http_auth_type",
+  "http_username",
+  "http_password",
+  "http_token",
+  "http_timeout",
+  "http_response_type",
+  "section_break_8",
+  "modbus_host",
+  "modbus_port",
+  "modbus_slave_id",
+  "modbus_register",
+  "column_break_9",
+  "modbus_register_type",
+  "modbus_byte_order",
+  "modbus_word_order",
+  "modbus_scale_factor",
+  "modbus_offset",
+  "section_break_10",
+  "response_format",
+  "weight_regex",
+  "gross_weight_regex",
+  "tare_weight_regex",
+  "net_weight_regex",
+  "unit_regex",
+  "column_break_11",
+  "stable_regex",
+  "stable_value",
+  "weight_json_path",
+  "gross_json_path",
+  "tare_json_path",
+  "net_json_path",
+  "unit_json_path",
+  "stable_json_path",
+  "section_break_12",
+  "decimal_precision",
+  "decimal_separator",
+  "column_break_13",
+  "thousands_separator",
+  "negative_weight_allowed",
+  "section_break_14",
+  "read_command",
+  "zero_command",
+  "column_break_15",
+  "tare_command",
+  "print_command",
+  "command_terminator",
+  "stability_tolerance"
+ ],
+ "fields": [
+  {
+   "fieldname": "profile_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Profile Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "connection_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Connection Type",
+   "options": "Serial\nTCP/IP\nHTTP API\nModbus TCP\nManual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "label": "Identification"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "depends_on": "eval:doc.connection_type=='Serial'",
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Serial Settings"
+  },
+  {
+   "description": "e.g. COM3 or /dev/ttyUSB0",
+   "fieldname": "serial_port",
+   "fieldtype": "Data",
+   "label": "Port"
+  },
+  {
+   "default": "9600",
+   "fieldname": "baud_rate",
+   "fieldtype": "Select",
+   "label": "Baud Rate",
+   "options": "1200\n2400\n4800\n9600\n19200\n38400\n57600\n115200"
+  },
+  {
+   "default": "8",
+   "fieldname": "data_bits",
+   "fieldtype": "Select",
+   "label": "Data Bits",
+   "options": "5\n6\n7\n8"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break",
+   "label": "Serial Settings (cont.)"
+  },
+  {
+   "default": "1",
+   "fieldname": "stop_bits",
+   "fieldtype": "Select",
+   "label": "Stop Bits",
+   "options": "1\n1.5\n2"
+  },
+  {
+   "default": "None",
+   "fieldname": "parity",
+   "fieldtype": "Select",
+   "label": "Parity",
+   "options": "None\nEven\nOdd\nMark\nSpace"
+  },
+  {
+   "default": "2",
+   "fieldname": "serial_read_timeout",
+   "fieldtype": "Float",
+   "label": "Read Timeout (s)"
+  },
+  {
+   "default": "2",
+   "fieldname": "serial_write_timeout",
+   "fieldtype": "Float",
+   "label": "Write Timeout (s)"
+  },
+  {
+   "default": "ascii",
+   "fieldname": "serial_encoding",
+   "fieldtype": "Data",
+   "label": "Encoding"
+  },
+  {
+   "default": "\\r\\n",
+   "fieldname": "serial_line_terminator",
+   "fieldtype": "Data",
+   "label": "Line Terminator"
+  },
+  {
+   "depends_on": "eval:doc.connection_type=='TCP/IP'",
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "TCP Settings"
+  },
+  {
+   "fieldname": "tcp_host",
+   "fieldtype": "Data",
+   "label": "Host"
+  },
+  {
+   "default": "2000",
+   "fieldname": "tcp_port",
+   "fieldtype": "Int",
+   "label": "Port"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break",
+   "label": "TCP Settings (cont.)"
+  },
+  {
+   "default": "5",
+   "fieldname": "tcp_socket_timeout",
+   "fieldtype": "Float",
+   "label": "Socket Timeout (s)"
+  },
+  {
+   "default": "ascii",
+   "fieldname": "tcp_encoding",
+   "fieldtype": "Data",
+   "label": "Encoding"
+  },
+  {
+   "default": "\\r\\n",
+   "fieldname": "tcp_terminator",
+   "fieldtype": "Data",
+   "label": "Terminator"
+  },
+  {
+   "depends_on": "eval:doc.connection_type=='HTTP API'",
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "HTTP Settings"
+  },
+  {
+   "fieldname": "http_url",
+   "fieldtype": "Data",
+   "label": "URL"
+  },
+  {
+   "default": "GET",
+   "fieldname": "http_method",
+   "fieldtype": "Select",
+   "label": "HTTP Method",
+   "options": "GET\nPOST\nPUT"
+  },
+  {
+   "fieldname": "http_headers",
+   "fieldtype": "Code",
+   "label": "Headers",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "http_request_body",
+   "fieldtype": "Code",
+   "label": "Request Body",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break",
+   "label": "HTTP Auth"
+  },
+  {
+   "default": "None",
+   "fieldname": "http_auth_type",
+   "fieldtype": "Select",
+   "label": "Authentication Type",
+   "options": "None\nBasic\nBearer Token\nAPI Key Header"
+  },
+  {
+   "fieldname": "http_username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "fieldname": "http_password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "http_token",
+   "fieldtype": "Password",
+   "label": "Token / API Key"
+  },
+  {
+   "default": "5",
+   "fieldname": "http_timeout",
+   "fieldtype": "Float",
+   "label": "Timeout (s)"
+  },
+  {
+   "default": "JSON",
+   "fieldname": "http_response_type",
+   "fieldtype": "Select",
+   "label": "Response Type",
+   "options": "JSON\nText"
+  },
+  {
+   "depends_on": "eval:doc.connection_type=='Modbus TCP'",
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Modbus Settings"
+  },
+  {
+   "fieldname": "modbus_host",
+   "fieldtype": "Data",
+   "label": "Host"
+  },
+  {
+   "default": "502",
+   "fieldname": "modbus_port",
+   "fieldtype": "Int",
+   "label": "Port"
+  },
+  {
+   "default": "1",
+   "fieldname": "modbus_slave_id",
+   "fieldtype": "Int",
+   "label": "Slave ID"
+  },
+  {
+   "fieldname": "modbus_register",
+   "fieldtype": "Int",
+   "label": "Register"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break",
+   "label": "Modbus Settings (cont.)"
+  },
+  {
+   "default": "Holding Register",
+   "fieldname": "modbus_register_type",
+   "fieldtype": "Select",
+   "label": "Register Type",
+   "options": "Holding Register\nInput Register"
+  },
+  {
+   "default": "Big Endian",
+   "fieldname": "modbus_byte_order",
+   "fieldtype": "Select",
+   "label": "Byte Order",
+   "options": "Big Endian\nLittle Endian"
+  },
+  {
+   "default": "Big Endian",
+   "fieldname": "modbus_word_order",
+   "fieldtype": "Select",
+   "label": "Word Order",
+   "options": "Big Endian\nLittle Endian"
+  },
+  {
+   "default": "1",
+   "fieldname": "modbus_scale_factor",
+   "fieldtype": "Float",
+   "label": "Scale Factor"
+  },
+  {
+   "default": "0",
+   "fieldname": "modbus_offset",
+   "fieldtype": "Float",
+   "label": "Offset"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Parsing Settings"
+  },
+  {
+   "default": "Plain Numeric",
+   "fieldname": "response_format",
+   "fieldtype": "Select",
+   "label": "Response Format",
+   "options": "Plain Numeric\nRegex\nJSON Path\nDelimited Gross/Tare/Net",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weight_regex",
+   "fieldtype": "Data",
+   "label": "Weight Regex"
+  },
+  {
+   "fieldname": "gross_weight_regex",
+   "fieldtype": "Data",
+   "label": "Gross Weight Regex"
+  },
+  {
+   "fieldname": "tare_weight_regex",
+   "fieldtype": "Data",
+   "label": "Tare Weight Regex"
+  },
+  {
+   "fieldname": "net_weight_regex",
+   "fieldtype": "Data",
+   "label": "Net Weight Regex"
+  },
+  {
+   "fieldname": "unit_regex",
+   "fieldtype": "Data",
+   "label": "Unit Regex"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break",
+   "label": "Stability & JSON Paths"
+  },
+  {
+   "fieldname": "stable_regex",
+   "fieldtype": "Data",
+   "label": "Stable Regex"
+  },
+  {
+   "fieldname": "stable_value",
+   "fieldtype": "Data",
+   "label": "Stable Value"
+  },
+  {
+   "fieldname": "weight_json_path",
+   "fieldtype": "Data",
+   "label": "Weight JSON Path"
+  },
+  {
+   "fieldname": "gross_json_path",
+   "fieldtype": "Data",
+   "label": "Gross JSON Path"
+  },
+  {
+   "fieldname": "tare_json_path",
+   "fieldtype": "Data",
+   "label": "Tare JSON Path"
+  },
+  {
+   "fieldname": "net_json_path",
+   "fieldtype": "Data",
+   "label": "Net JSON Path"
+  },
+  {
+   "fieldname": "unit_json_path",
+   "fieldtype": "Data",
+   "label": "Unit JSON Path"
+  },
+  {
+   "fieldname": "stable_json_path",
+   "fieldtype": "Data",
+   "label": "Stable JSON Path"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Number Format"
+  },
+  {
+   "default": "2",
+   "fieldname": "decimal_precision",
+   "fieldtype": "Int",
+   "label": "Decimal Precision"
+  },
+  {
+   "default": ".",
+   "fieldname": "decimal_separator",
+   "fieldtype": "Data",
+   "label": "Decimal Separator"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break",
+   "label": "Number Format (cont.)"
+  },
+  {
+   "fieldname": "thousands_separator",
+   "fieldtype": "Data",
+   "label": "Thousands Separator"
+  },
+  {
+   "default": "0",
+   "fieldname": "negative_weight_allowed",
+   "fieldtype": "Check",
+   "label": "Negative Weight Allowed"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Command Settings"
+  },
+  {
+   "fieldname": "read_command",
+   "fieldtype": "Data",
+   "label": "Read Command"
+  },
+  {
+   "fieldname": "zero_command",
+   "fieldtype": "Data",
+   "label": "Zero Command"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break",
+   "label": "Command Settings (cont.)"
+  },
+  {
+   "fieldname": "tare_command",
+   "fieldtype": "Data",
+   "label": "Tare Command"
+  },
+  {
+   "fieldname": "print_command",
+   "fieldtype": "Data",
+   "label": "Print Command"
+  },
+  {
+   "default": "\\r\\n",
+   "fieldname": "command_terminator",
+   "fieldtype": "Data",
+   "label": "Command Terminator"
+  },
+  {
+   "default": "0.02",
+   "description": "Max allowed difference between consecutive readings to be considered stable",
+   "fieldname": "stability_tolerance",
+   "fieldtype": "Float",
+   "label": "Stability Tolerance"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-02 21:20:49.780866",
+ "modified_by": "Administrator",
+ "module": "Weighing Machine Integration",
+ "name": "Weighing Machine Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Weighing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "profile_name"
+}

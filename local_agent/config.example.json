@@ -1,0 +1,23 @@
+{
+	"host": "0.0.0.0",
+	"port": 8585,
+	"token": "CHANGE-ME-TO-A-LONG-RANDOM-TOKEN",
+
+	"_comment": "Everything in 'machines' below is OPTIONAL. By default ERPNext sends the Weighing Machine Profile inline with every request, so the agent doesn't need machines pre-registered here. Only fill this in if you want to run/test the agent fully standalone (see simulator.py).",
+
+	"machines": {
+		"EXAMPLE-SCALE-1": {
+			"connection_type": "Serial",
+			"serial_port": "COM3",
+			"baud_rate": "9600",
+			"data_bits": "8",
+			"stop_bits": "1",
+			"parity": "None",
+			"serial_read_timeout": 2,
+			"serial_encoding": "ascii",
+			"serial_line_terminator": "\r\n",
+			"response_format": "Plain Numeric",
+			"decimal_precision": 2
+		}
+	}
+}

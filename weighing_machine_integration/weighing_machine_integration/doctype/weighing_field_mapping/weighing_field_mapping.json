@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:mapping_name",
+ "creation": "2026-10-02 21:19:33.173151",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "mapping_name",
+  "enabled",
+  "weighing_machine",
+  "column_break_21",
+  "target_doctype",
+  "is_child_table",
+  "child_table_field",
+  "section_break_22",
+  "target_weight_field",
+  "target_gross_weight_field",
+  "target_tare_weight_field",
+  "target_net_weight_field",
+  "column_break_23",
+  "target_uom_field",
+  "target_stable_field",
+  "target_reading_reference_field",
+  "target_timestamp_field",
+  "section_break_24",
+  "child_weight_field",
+  "child_gross_weight_field",
+  "child_tare_weight_field",
+  "column_break_25",
+  "child_net_weight_field",
+  "child_uom_field",
+  "child_stable_field",
+  "child_reading_reference_field",
+  "section_break_26",
+  "require_stable_weight",
+  "auto_capture",
+  "allow_manual_weight",
+  "section_break_27",
+  "total_weight_field",
+  "total_quantity_field",
+  "total_net_weight_field"
+ ],
+ "fields": [
+  {
+   "fieldname": "mapping_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mapping Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "weighing_machine",
+   "fieldtype": "Link",
+   "label": "Weighing Machine",
+   "options": "Weighing Machine"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break",
+   "label": "Target"
+  },
+  {
+   "fieldname": "target_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Target DocType",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_child_table",
+   "fieldtype": "Check",
+   "label": "Is Child Table"
+  },
+  {
+   "depends_on": "eval:doc.is_child_table",
+   "description": "Fieldname of the child table on the Target DocType",
+   "fieldname": "child_table_field",
+   "fieldtype": "Data",
+   "label": "Child Table Fieldname"
+  },
+  {
+   "depends_on": "eval:!doc.is_child_table",
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "Parent Field Mapping"
+  },
+  {
+   "fieldname": "target_weight_field",
+   "fieldtype": "Data",
+   "label": "Target Weight Field"
+  },
+  {
+   "fieldname": "target_gross_weight_field",
+   "fieldtype": "Data",
+   "label": "Target Gross Weight Field"
+  },
+  {
+   "fieldname": "target_tare_weight_field",
+   "fieldtype": "Data",
+   "label": "Target Tare Weight Field"
+  },
+  {
+   "fieldname": "target_net_weight_field",
+   "fieldtype": "Data",
+   "label": "Target Net Weight Field"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break",
+   "label": "Parent Field Mapping (cont.)"
+  },
+  {
+   "fieldname": "target_uom_field",
+   "fieldtype": "Data",
+   "label": "Target UOM Field"
+  },
+  {
+   "fieldname": "target_stable_field",
+   "fieldtype": "Data",
+   "label": "Target Stable Field"
+  },
+  {
+   "fieldname": "target_reading_reference_field",
+   "fieldtype": "Data",
+   "label": "Target Reading Reference Field"
+  },
+  {
+   "fieldname": "target_timestamp_field",
+   "fieldtype": "Data",
+   "label": "Target Timestamp Field"
+  },
+  {
+   "depends_on": "eval:doc.is_child_table",
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Child Table Field Mapping"
+  },
+  {
+   "fieldname": "child_weight_field",
+   "fieldtype": "Data",
+   "label": "Child Weight Field"
+  },
+  {
+   "fieldname": "child_gross_weight_field",
+   "fieldtype": "Data",
+   "label": "Child Gross Weight Field"
+  },
+  {
+   "fieldname": "child_tare_weight_field",
+   "fieldtype": "Data",
+   "label": "Child Tare Weight Field"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break",
+   "label": "Child Table Field Mapping (cont.)"
+  },
+  {
+   "fieldname": "child_net_weight_field",
+   "fieldtype": "Data",
+   "label": "Child Net Weight Field"
+  },
+  {
+   "fieldname": "child_uom_field",
+   "fieldtype": "Data",
+   "label": "Child UOM Field"
+  },
+  {
+   "fieldname": "child_stable_field",
+   "fieldtype": "Data",
+   "label": "Child Stable Field"
+  },
+  {
+   "fieldname": "child_reading_reference_field",
+   "fieldtype": "Data",
+   "label": "Child Reading Reference Field"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break",
+   "label": "Behaviour"
+  },
+  {
+   "default": "0",
+   "fieldname": "require_stable_weight",
+   "fieldtype": "Check",
+   "label": "Require Stable Weight"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_capture",
+   "fieldtype": "Check",
+   "label": "Auto Capture"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_manual_weight",
+   "fieldtype": "Check",
+   "label": "Allow Manual Weight"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break",
+   "label": "Total Calculations (optional)"
+  },
+  {
+   "description": "Parent field to auto-sum the configured child weight field into",
+   "fieldname": "total_weight_field",
+   "fieldtype": "Data",
+   "label": "Total Weight Field"
+  },
+  {
+   "fieldname": "total_quantity_field",
+   "fieldtype": "Data",
+   "label": "Total Quantity Field"
+  },
+  {
+   "fieldname": "total_net_weight_field",
+   "fieldtype": "Data",
+   "label": "Total Net Weight Field"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-02 21:19:33.173151",
+ "modified_by": "Administrator",
+ "module": "Weighing Machine Integration",
+ "name": "Weighing Field Mapping",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Weighing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "mapping_name"
+}

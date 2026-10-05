@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-10-02 21:19:34.348386",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enable_integration",
+  "allow_manual_weight",
+  "require_stable_weight",
+  "section_break_35",
+  "default_machine",
+  "default_profile",
+  "column_break_36",
+  "default_uom",
+  "default_timeout",
+  "section_break_37",
+  "minimum_weight",
+  "maximum_weight",
+  "section_break_38",
+  "enable_logging",
+  "log_level",
+  "section_break_39",
+  "enable_local_agent",
+  "local_agent_url",
+  "local_agent_token"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "fieldname": "enable_integration",
+   "fieldtype": "Check",
+   "label": "Enable Integration"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_manual_weight",
+   "fieldtype": "Check",
+   "label": "Allow Manual Weight"
+  },
+  {
+   "default": "0",
+   "fieldname": "require_stable_weight",
+   "fieldtype": "Check",
+   "label": "Require Stable Weight"
+  },
+  {
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_machine",
+   "fieldtype": "Link",
+   "label": "Default Machine",
+   "options": "Weighing Machine"
+  },
+  {
+   "fieldname": "default_profile",
+   "fieldtype": "Link",
+   "label": "Default Profile",
+   "options": "Weighing Machine Profile"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break",
+   "label": "Defaults (cont.)"
+  },
+  {
+   "default": "KG",
+   "fieldname": "default_uom",
+   "fieldtype": "Select",
+   "label": "Default UOM",
+   "options": "KG\nG\nLB\nTON"
+  },
+  {
+   "default": "5",
+   "fieldname": "default_timeout",
+   "fieldtype": "Int",
+   "label": "Default Timeout (s)"
+  },
+  {
+   "fieldname": "section_break_37",
+   "fieldtype": "Section Break",
+   "label": "Weight Limits"
+  },
+  {
+   "fieldname": "minimum_weight",
+   "fieldtype": "Float",
+   "label": "Minimum Weight"
+  },
+  {
+   "fieldname": "maximum_weight",
+   "fieldtype": "Float",
+   "label": "Maximum Weight"
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break",
+   "label": "Logging"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_logging",
+   "fieldtype": "Check",
+   "label": "Enable Logging"
+  },
+  {
+   "default": "Info",
+   "fieldname": "log_level",
+   "fieldtype": "Select",
+   "label": "Log Level",
+   "options": "Error\nWarning\nInfo\nDebug"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break",
+   "label": "Local Agent"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_local_agent",
+   "fieldtype": "Check",
+   "label": "Enable Local Agent"
+  },
+  {
+   "depends_on": "eval:doc.enable_local_agent",
+   "fieldname": "local_agent_url",
+   "fieldtype": "Data",
+   "label": "Local Agent URL"
+  },
+  {
+   "depends_on": "eval:doc.enable_local_agent",
+   "fieldname": "local_agent_token",
+   "fieldtype": "Password",
+   "label": "Local Agent Token"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-02 21:19:34.348386",
+ "modified_by": "Administrator",
+ "module": "Weighing Machine Integration",
+ "name": "Weighing Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Weighing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

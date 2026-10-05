@@ -1,0 +1,26 @@
+{
+ "content": null,
+ "creation": "2026-10-02 21:26:43.056252",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-10-02 21:26:43.056252",
+ "modified_by": "Administrator",
+ "module": "Weighing Machine Integration",
+ "name": "live-weighing",
+ "owner": "Administrator",
+ "page_name": "live-weighing",
+ "roles": [
+  {
+   "role": "Weighing User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Live Weighing"
+}
